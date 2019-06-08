@@ -1,6 +1,14 @@
+{% set name = "mbee" %}
+{% set version = "0.8.1" %}
+
+
 package:
-  name: mbee
-  version: 0.8.1
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/lmco/{{ name }}/archive/{{ version }}.tar.gz
+  sha1: be1e94378b1e67aa5a53142df17f3346fa9d86a6
 
 build:
   number: 0
@@ -9,3 +17,27 @@ requirements:
   run:
     - mongodb
     - yarn
+
+test:
+  commands:
+    - node mbee test
+
+about:
+  home: http://www.openmbee.org
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE.md
+  summary: 'Model-Based Engineering Environment'
+  description: |
+    The Model-Based Engineering Environment (MBEE) is a modeling collaboration software 
+    that integrates system models with multidisciplinary engineering data and tools. 
+    This enables system models to be a single-source of truth. MBEE allows for model 
+    data to be more accessible across disciplines and skill sets via web-based UI. 
+    The UI enables users to interact with system model data without needing to be a 
+    systems modeler.
+  doc_url: https://github.com/lmco/mbee/doc
+  dev_url: https://github.com/lmco/mbee
+
+extra:
+  recipe-maintainers:
+    - sanbales
