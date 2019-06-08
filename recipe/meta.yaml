@@ -1,0 +1,11 @@
+package:
+  name: mbee
+  version: 0.8.1
+
+build:
+  number: 0
+
+requirements:
+  run:
+    - mongodb
+    - yarn
